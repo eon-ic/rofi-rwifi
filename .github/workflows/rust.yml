@@ -9,7 +9,7 @@ on:
 env:
   CARGO_TERM_COLOR: always
   # 定义可执行文件名称（根据你的项目名修改）
-  BIN_NAME: my_rust_app
+  BIN_NAME: rofi-rwifi
   # 定义打包文件名
   ARCHIVE_NAME: ${{ github.repository_name }}-${{ github.sha }}-linux-amd64
 
