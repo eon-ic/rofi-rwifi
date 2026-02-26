@@ -36,21 +36,13 @@ jobs:
         # 复制 Release 版可执行文件到临时目录
         cp target/release/${{ env.BIN_NAME }} build_dist/
         # 可选：复制 README、LICENSE 等说明文件
-        [ -f README.md ] && cp README.md build_dist
+        # [ -f README.md ] && cp README.md build_dist
         # [ -f LICENSE ] && cp LICENSE build_dist/
-    
-    - name: 打包为 tar.gz
-      run: |
-        # 进入临时目录并打包
-        cd build_dist
-        tar -czf ../${{ env.ARCHIVE_NAME }}.tar.gz *
-        # 验证打包文件
-        ls -lh ../${{ env.ARCHIVE_NAME }}.tar.gz
     
     - name: 上传 tar.gz 产物
       uses: actions/upload-artifact@v4
       with:
-        name: ${{ env.ARCHIVE_NAME }}
-        path: ${{ env.ARCHIVE_NAME }}.tar.gz
+        name: ${{ env.BIN_NAME }}
+        path: ${{ env.BIN_NAME }}
         # 产物保留 30 天（可选配置）
         retention-days: 30
