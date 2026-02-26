@@ -1,0 +1,38 @@
+# rofi-wifi 配置文件
+# 位置: ~/.config/rofi/wifi.toml  或  与可执行文件同目录的 config.toml
+
+# rofi 字体
+font = "DejaVu Sans Mono 8"
+
+# rofi 窗口位置 (0=中央 1=左上 2=上 3=右上 4=右 5=右下 6=下 7=左下 8=左)
+position = 0
+
+# 窗口偏移（像素）
+x_offset = 0
+y_offset = 0
+
+# 菜单最大显示行数
+max_lines = 8
+
+# nmcli 连接超时（秒）
+connect_timeout = 15
+
+# 密码错误最大重试次数
+max_retry = 3
+
+# Wi-Fi 列表缓存有效期（秒），守护进程模式下也用此值作为刷新间隔
+cache_ttl = 30
+
+# 连通性检测目标
+ping_host = "1.1.1.1"
+
+# 每次连通性检测发送的 ping 包数
+ping_count = 3
+
+# VPN 联动：连上指定 SSID 后自动启动对应 VPN profile
+# 格式: [["VPN profile 名", "触发 SSID"], ...]
+# 留空则禁用
+auto_vpn = []
+
+# 示例：连上 "OfficeWifi" 自动启动名为 "WorkVPN" 的 VPN
+# auto_vpn = [["WorkVPN", "OfficeWifi"]]
