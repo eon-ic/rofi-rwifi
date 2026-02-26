@@ -36,8 +36,8 @@ jobs:
         # 复制 Release 版可执行文件到临时目录
         cp target/release/${{ env.BIN_NAME }} build_dist/
         # 可选：复制 README、LICENSE 等说明文件
-        [ -f README.md ] && cp README.md build_dist/
-        [ -f LICENSE ] && cp LICENSE build_dist/
+        [ -f README.md ] && cp README.md build_dist
+        # [ -f LICENSE ] && cp LICENSE build_dist/
     
     - name: 打包为 tar.gz
       run: |
